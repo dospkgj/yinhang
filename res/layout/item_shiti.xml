@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="付款多少积分；了科技时代；封口令"
+        android:textColor="#111111"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/item_answer_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="2dp"
+        android:text="答  案："
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_content"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/item_answer_support"
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_option_a_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_answer"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="2dp"
+        android:text="选项A："
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_option_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_answer"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/item_option_a_support"
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_option_b_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_option_a"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="2dp"
+        android:text="选项B："
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_option_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_option_a"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/item_option_b_support"
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_option_c_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_option_b"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="2dp"
+        android:text="选项C："
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_option_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_option_b"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/item_option_c_support"
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_option_d_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_option_c"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="2dp"
+        android:text="选项D："
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/item_option_d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_option_c"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/item_option_d_support"
+        android:textColor="#111111"
+        android:textSize="14sp" />
+
+</RelativeLayout>
