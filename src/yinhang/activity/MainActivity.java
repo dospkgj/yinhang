@@ -69,7 +69,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				SqlHelper.DB_ALL_NAME);
 	}
 
-	private static final String[] strs = { "客户经理", "营销", "小企业" };
+	private static final String[] strs = {"机构理财","客户经理", "营销", "小企业" };
 	private Spinner spinner;
 	private CheckBox ckAn;
 
