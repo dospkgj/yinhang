@@ -11,6 +11,7 @@ import java.util.List;
 
 import yinhang.adapter.MyAdapter;
 import yinhang.entity.BaseEntity;
+import yinhang.sql.DBEnum;
 import yinhang.sql.SqlHelper;
 import yinhang.utils.CopyUtils;
 
@@ -69,7 +70,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				SqlHelper.DB_ALL_NAME);
 	}
 
-	private static final String[] strs = {"机构理财","客户经理", "营销", "小企业" };
+	private static final DBEnum[] dbs = { DBEnum.会计上岗, DBEnum.信贷业务 };
 	private Spinner spinner;
 	private CheckBox ckAn;
 
@@ -83,6 +84,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		btnSearch.setOnClickListener(this);
 		myAdapter = new MyAdapter(list, this);
 		listView.setAdapter(myAdapter);
+		String[] strs = new String[dbs.length];
+		for (int i = 0; i < strs.length; i++) {
+			strs[i] = dbs[i].toString();
+		}
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, strs);
 		arrayAdapter
@@ -108,12 +113,12 @@ public class MainActivity extends Activity implements OnClickListener {
 		list.clear();
 		if (TextUtils.isEmpty(string)) {
 			List<BaseEntity> all = new SqlHelper(this).getAll(null,
-					spinner.getSelectedItemPosition(), ckAn.isChecked());
+					dbs[spinner.getSelectedItemPosition()], ckAn.isChecked());
 			list.addAll(all);
 		} else {
 			String[] split = string.split(" ");
 			List<BaseEntity> all = new SqlHelper(this).getAll(split,
-					spinner.getSelectedItemPosition(), ckAn.isChecked());
+					dbs[spinner.getSelectedItemPosition()], ckAn.isChecked());
 			list.addAll(all);
 		}
 		myAdapter.notifyDataSetChanged();

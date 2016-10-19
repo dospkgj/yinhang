@@ -12,43 +12,18 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class SqlHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "yinhang_";
-    private static final int VERSION = 2;
+    private static final int VERSION = 3;
     public static final String DB_ALL_NAME = DB_NAME + VERSION + ".db";
 
     public SqlHelper(Context context) {
         super(context, DB_ALL_NAME, null, VERSION);
     }
 
-    public List<BaseEntity> getAll(String[] key, int j, boolean isSearchA) {
+    public List<BaseEntity> getAll(String[] key, DBEnum dbEnum, boolean isSearchA) {
         SQLiteDatabase openSqlite = getWritableDatabase();
         StringBuilder builder = new StringBuilder();
         builder.append("select * from ");
-        switch (j) {
-            case 0:
-                builder.append("jigoulicai");
-                break;
-            case 1:
-                builder.append(" kehu ");
-                break;
-            case 2:
-                builder.append(" yingxiao ");
-                break;
-            case 3:
-                builder.append(" zhongxiao ");
-
-                break;
-//		case 0:
-//			builder.append(" shiti ");
-//			break;
-//		case 1:
-//			builder.append(" fuzhai ");
-//
-//			break;
-//		case 2:
-//			builder.append(" zhongjian ");
-//			break;
-        }
-
+        builder.append(dbEnum.getDbName());
         Cursor query = null;
         if (key == null) {
             query = openSqlite.rawQuery(builder.toString(), null);
